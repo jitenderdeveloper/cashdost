@@ -5,6 +5,8 @@ const cors = require('cors')
 
 //import router----
 const OfferRouter = require('./api/router/offers')
+const UserRouter = require('./api/router/users')
+const ClientRouter = require('./api/router/clients')
 
 
 // --mongoose-connection----
@@ -35,6 +37,10 @@ app.use(cors())
 
 //router connection----
 app.use('/offers', OfferRouter);
+app.use('/users', UserRouter);
+app.use('/clients-store', ClientRouter)
+
+
 
 
 

@@ -22,10 +22,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    re_enter: {
+    confirmPassword: {
       type: String,
       required: true,
     },
+    userType: {
+      type: Number,
+      default: 0,
+    }
   },
   {
     timestamps: true,
