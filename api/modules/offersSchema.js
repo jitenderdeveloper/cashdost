@@ -4,27 +4,27 @@ const offerSchema = new mongoose.Schema(
   {
     Company_offer: {
       type: String,
-      require: true,
+      required: true,
     },
     Company_paragraph: {
       type: String,
-      require: true,
+      required: true,
     },
     Company_logo: {
       type: String,
-      require: true,
+      required: true,
     },
     paragraph: {
       type: String,
-      require: true,
+      required: true,
     },
     self_offer: {
       type: String,
-      require: true,
+      required: true,
     },
     redirect_link: {
       type: String,
-      require: true,
+      required: true,
     },
   },
   {

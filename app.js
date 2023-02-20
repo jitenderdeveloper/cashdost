@@ -7,6 +7,8 @@ const cors = require('cors')
 const OfferRouter = require('./api/router/offers')
 const UserRouter = require('./api/router/users')
 const ClientRouter = require('./api/router/clients')
+const ProductRouter = require('./api/router/product')
+const SliderRouter = require('./api/router/slider')
 
 
 // --mongoose-connection----
@@ -39,6 +41,8 @@ app.use(cors())
 app.use('/offers', OfferRouter);
 app.use('/users', UserRouter);
 app.use('/clients-store', ClientRouter)
+app.use('/product', ProductRouter)
+app.use('/slider', SliderRouter)
 
 
 
