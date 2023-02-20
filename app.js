@@ -9,6 +9,7 @@ const UserRouter = require('./api/router/users')
 const ClientRouter = require('./api/router/clients')
 const ProductRouter = require('./api/router/product')
 const SliderRouter = require('./api/router/slider')
+const TodayDealsRouter = require('./api/router/todaydeals')
 
 
 // --mongoose-connection----
@@ -43,6 +44,8 @@ app.use('/users', UserRouter);
 app.use('/clients-store', ClientRouter)
 app.use('/product', ProductRouter)
 app.use('/slider', SliderRouter)
+app.use('/today-deals', TodayDealsRouter)
+
 
 
 
