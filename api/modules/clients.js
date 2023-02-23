@@ -4,23 +4,23 @@ const clientSchema = new mongoose.Schema(
   {
     client_logo: {
       type: String,
-      required: true,
+      // required: true,
     },
     price_title: {
       type: String,
-      required: true,
+      // required: true,
     },
     offer_description: {
       type: String,
-      required: true,
+      // required: true,
     },
     upto_offer: {
       type: String,
-      required: true,
+      // required: true,
     },
     store_link: {
       type: String,
-      required: true,
+      // required: true,
     },
   },
   {

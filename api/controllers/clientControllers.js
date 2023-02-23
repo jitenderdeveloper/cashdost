@@ -1,5 +1,6 @@
 const clientSchema = require("../modules/clients");
 
+
 const getItems = (req, res) => {
   try {
     clientSchema.find().then((result) => {
@@ -13,25 +14,25 @@ const getItems = (req, res) => {
   }
 };
 
-const postItems = (req, res) => {
-  try {
-    const client_data = clientSchema({
-      client_logo: req.body.client_logo,
-      price_title: req.body.price_title,
-      offer_description: req.body.offer_description,
-      upto_offer: req.body.upto_offer,
-      store_link: req.body.store_link,
-    });
-    client_data.save().then((result) => {
-      res.status(200).json({
-        message: "Client data is post...",
-        client_data: result,
-      });
-    });
-  } catch (error) {
-    res.send(error);
-  }
-};
+// const postItems = (req, res) => {
+//   try {
+//     const client_data = clientSchema({
+//       client_logo: req.body.client_logo,
+//       price_title: req.body.price_title,
+//       offer_description: req.body.offer_description,
+//       upto_offer: req.body.upto_offer,
+//       store_link: req.body.store_link,
+//     });
+//     client_data.save().then((result) => {
+//       res.status(200).json({
+//         message: "Client data is post...",
+//         client_data: result,
+//       });
+//     });
+//   } catch (error) {
+//     res.send(error);
+//   }
+// };
 
 const getIdItems = (req, res) => {
   try {
@@ -46,30 +47,30 @@ const getIdItems = (req, res) => {
   }
 };
 
-const putItems = (req, res) => {
-  try {
-    clientSchema.findByIdAndUpdate(
-      { _id: req.params.id },
-      {
-        $set: {
-          client_logo: req.body.client_logo,
-          price_title: req.body.price_title,
-          offer_description: req.body.offer_description,
-          upto_offer: req.body.upto_offer,
-          store_link: req.body.store_link,
-        },
-      }
-    )
-    .then((result) =>{
-        res.status(200).json({
-            message: 'client data is updated...',
-            client_data: result
-        })
-    })
-  } catch (error) {
-    res.send(error);
-  }
-};
+// const putItems = (req, res) => {
+//   try {
+//     clientSchema.findByIdAndUpdate(
+//       { _id: req.params.id },
+//       {
+//         $set: {
+//           client_logo: req.body.client_logo,
+//           price_title: req.body.price_title,
+//           offer_description: req.body.offer_description,
+//           upto_offer: req.body.upto_offer,
+//           store_link: req.body.store_link,
+//         },
+//       }
+//     )
+//     .then((result) =>{
+//         res.status(200).json({
+//             message: 'client data is updated...',
+//             client_data: result
+//         })
+//     })
+//   } catch (error) {
+//     res.send(error);
+//   }
+// };
 
 const deleteItems = (req, res) => {
     try {
@@ -87,8 +88,8 @@ const deleteItems = (req, res) => {
 
 module.exports = {
   getItems,
-  postItems,
+  // postItems,
   getIdItems,
-  putItems,
+  // putItems,
   deleteItems,
 };

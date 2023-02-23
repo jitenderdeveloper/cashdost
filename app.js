@@ -37,8 +37,9 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-
 //router connection----
+app.use('/public',express.static('public'));
+
 app.use('/offers', OfferRouter);
 app.use('/users', UserRouter);
 app.use('/clients-store', ClientRouter)

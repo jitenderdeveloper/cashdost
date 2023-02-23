@@ -15,28 +15,28 @@ const getItems = (req, res) => {
   }
 };
 
-const postItems = (req, res) => {
-  try {
-    const offer_data = offerSchema({
-      Company_offer: req.body.Company_offer,
-      Company_paragraph: req.body.Company_paragraph,
-      Company_logo: req.body.Company_logo,
-      paragraph: req.body.paragraph,
-      self_offer: req.body.self_offer,
-      redirect_link: req.body.redirect_link,
-    });
-    offer_data.save().then((result) => {
-      res.status(200).json({
-        message: "offer data is post",
-        offer_data: result,
-      });
-    });
-  } catch (error) {
-    res.status(400).json({
-      mmessage: error,
-    });
-  }
-};
+// const postItems = (req, res) => {
+//   try {
+//     const offer_data = offerSchema({
+//       Company_offer: req.body.Company_offer,
+//       Company_paragraph: req.body.Company_paragraph,
+//       Company_logo: req.body.Company_logo,
+//       paragraph: req.body.paragraph,
+//       self_offer: req.body.self_offer,
+//       redirect_link: req.body.redirect_link,
+//     });
+//     offer_data.save().then((result) => {
+//       res.status(200).json({
+//         message: "offer data is post",
+//         offer_data: result,
+//       });
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       mmessage: error,
+//     });
+//   }
+// };
 
 const getIdItems = (req, res) => {
   try {
@@ -102,7 +102,7 @@ const deleteItems = (req, res) => {
 
 module.exports = {
   getItems,
-  postItems,
+  // postItems,
   getIdItems,
   putItems,
   deleteItems,

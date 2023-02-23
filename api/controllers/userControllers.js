@@ -48,9 +48,10 @@ const registerpostItems = (req, res, next) => {
 //login-post
 const loginpostItems = (req, res, next) => {
   var username = req.body.username;
-  UserSchema.find({ username: username })
+  UserSchema.find({ username:username })
     .exec()
     .then((user) => {
+      // console.log(user);
       if (user.length < 1) {
         return res.status(404).json({
           message: "Auth Failed.",
@@ -68,11 +69,12 @@ const loginpostItems = (req, res, next) => {
               var token = jwt.sign(
                 {
                   username: user[0].username,
+                  userType: user[0].userType,
                   userId: user[0]._id,
                 },
                 "MY_SECRET_KEY",
                 {
-                  expiresIn: "8h",
+                  expiresIn: "3h",
                 }
               );
               res.status(200).json({
