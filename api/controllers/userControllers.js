@@ -66,6 +66,7 @@ const loginpostItems = (req, res, next) => {
                 message: "Auth Failed..",
               });
             } else if (result) {
+              const maxAge = 3 * 60 * 60;
               var token = jwt.sign(
                 {
                   username: user[0].username,
@@ -74,7 +75,7 @@ const loginpostItems = (req, res, next) => {
                 },
                 "MY_SECRET_KEY",
                 {
-                  expiresIn: "3h",
+                  expiresIn: maxAge,
                 }
               );
               res.status(200).json({

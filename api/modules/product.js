@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 
 const product = new mongoose.Schema(
   {
-    client_logo: {
-      type: String,
-      required: true,
-    },
     client_name: {
       type: String,
       required: true,
@@ -16,7 +12,7 @@ const product = new mongoose.Schema(
     },
     product_image: {
       type: String,
-      required: true,
+      // required: true,
     },
     product_title: {
       type: String,
@@ -31,7 +27,7 @@ const product = new mongoose.Schema(
       required: true,
     },
     product_feature: {
-      type: Array,
+      type: String,
       required: true,
     },
     product_offer_title: {

@@ -13,29 +13,29 @@ const getItems = (req, res) => {
   }
 };
 
-const postItems = (req, res) => {
-  try {
-    const product_data = productSchema({
-      client_logo: req.body.client_logo,
-      client_name: req.body.client_name,
-      category: req.body.category,
-      product_image: req.body.product_image,
-      product_title: req.body.product_title,
-      product_offer: req.body.product_offer,
-      product_link: req.body.product_link,
-      product_feature: req.body.product_feature,
-      product_offer_title: req.body.product_offer_title,
-    });
-    product_data.save().then((result) => {
-      res.status(200).json({
-        message: "product is added...",
-        product_data: result,
-      });
-    });
-  } catch (error) {
-    res.send(error);
-  }
-};
+// const postItems = (req, res) => {
+//   try {
+//     const product_data = productSchema({
+//       client_logo: req.body.client_logo,
+//       client_name: req.body.client_name,
+//       category: req.body.category,
+//       product_image: req.body.product_image,
+//       product_title: req.body.product_title,
+//       product_offer: req.body.product_offer,
+//       product_link: req.body.product_link,
+//       product_feature: req.body.product_feature,
+//       product_offer_title: req.body.product_offer_title,
+//     });
+//     product_data.save().then((result) => {
+//       res.status(200).json({
+//         message: "product is added...",
+//         product_data: result,
+//       });
+//     });
+//   } catch (error) {
+//     res.send(error);
+//   }
+// };
 
 const getIdItems = (req, res) => {
   try {
@@ -95,7 +95,7 @@ const deleteItems = (req, res) => {
 
 module.exports = {
   getItems,
-  postItems,
+  // postItems,
   getIdItems,
   putItems,
   deleteItems,
